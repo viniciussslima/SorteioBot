@@ -7,7 +7,7 @@ module.exports = (participants) => {
     let sorteadoIndex = Math.floor(Math.random() * participants.length);
     let sorteado = participants[sorteadoIndex];
 
-    sendMessage(participants[index], `Você tirou @${sorteado.username}`);
+    sendMessage(participants[index].id, `Você tirou @${sorteado.username}`);
 
     participants.splice(sorteadoIndex, 1);
 
