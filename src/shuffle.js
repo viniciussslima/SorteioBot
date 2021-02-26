@@ -7,12 +7,16 @@ module.exports = (participants) => {
     let sorteadoIndex = Math.floor(Math.random() * participants.length);
     let sorteado = participants[sorteadoIndex];
 
-    sendMessage(participants[index].id, `Você tirou @${sorteado.username}`);
+    if (sorteado.id !== participants[index].id) {
+      sendMessage(participants[index].id, `Você tirou @${sorteado.username}`);
 
-    participants.splice(sorteadoIndex, 1);
+      participants.splice(sorteadoIndex, 1);
 
-    if (participants.length === 0) {
-      loop = false;
+      index += 1;
+
+      if (participants.length === 0) {
+        loop = false;
+      }
     }
   }
 };
