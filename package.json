@@ -1,0 +1,20 @@
+{
+  "name": "SorteioBot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/viniciussslima/SorteioBot.git",
+  "author": "viniciussslima999 <viniciussslima@ufrn.edu.br>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.18"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
