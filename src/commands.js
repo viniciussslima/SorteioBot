@@ -11,12 +11,14 @@ const shuffle = require("./shuffle");
 
 module.exports = async (req, res) => {
   const message = req.body.message.text;
-  if (message.includes("/create")) {
-    await create(req);
-  } else if (message.includes("/join")) {
-    await join(req);
-  } else if (message.includes("/close")) {
-    await close(req);
+  if (message) {
+    if (message.includes("/create")) {
+      await create(req);
+    } else if (message.includes("/join")) {
+      await join(req);
+    } else if (message.includes("/close")) {
+      await close(req);
+    }
   }
   res.status(200).send();
 };
