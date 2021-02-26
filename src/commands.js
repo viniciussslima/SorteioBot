@@ -10,8 +10,8 @@ const {
 const shuffle = require("./shuffle");
 
 module.exports = async (req, res) => {
-  const message = req.body.message.text;
-  if (message) {
+  if (req.body.message && req.body.message.text) {
+    const message = req.body.message.text;
     if (message.includes("/create")) {
       await create(req);
     } else if (message.includes("/join")) {
