@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 module.exports = async (chat_id, text) => {
-  if (!process.env.NODE_ENV) {
+  if (!process.env.ENV) {
     const body = {
       chat_id,
       text,
