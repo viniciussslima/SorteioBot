@@ -1,11 +1,4 @@
-require("dotenv").config({
-  path:
-    process.env.NODE_ENV === "development"
-      ? ".development.env"
-      : process.env.NODE_ENV === "production"
-      ? ".production.env"
-      : ".env",
-});
+require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -23,6 +16,6 @@ db.on("error", console.error.bind(console, "connection error:"));
 app.use(express.json());
 app.post(`/${process.env.BOT_TOKEN}`, commands);
 
-app.listen(process.env.API_PORT, () => {
-  console.log("Api rodando na porta " + process.env.API_PORT);
+app.listen(process.env.PORT, () => {
+  console.log("Api rodando na porta " + process.env.PORT);
 });
