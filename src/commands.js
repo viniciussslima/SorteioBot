@@ -25,7 +25,7 @@ module.exports = async (req, res) => {
 
 const create = async (req) => {
   const eventName = req.body.message.text.split(" ")[1];
-  const chatId = req.body.chat.id;
+  const chatId = req.body.message.chat.id;
   try {
     if (await exists(eventName)) {
       return sendMessage(chatId, "Esse sorteio já existe");
@@ -68,7 +68,7 @@ const close = async (req) => {
 
   try {
     if (!(await exists(eventName))) {
-      return sendMessage(req.body.chat.id, "Esse sorteio não existe");
+      return sendMessage(req.body.message.chat.id, "Esse sorteio não existe");
     }
 
     shuffle(await getParticipants(eventName));
@@ -76,7 +76,7 @@ const close = async (req) => {
     await deleteSorteio(eventName);
   } catch (err) {
     sendMessage(
-      req.body.chat.id,
+      req.body.message.chat.id,
       `Ocorreu um erro interno, por favor tente novamente`
     );
   }
