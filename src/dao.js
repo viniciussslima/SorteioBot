@@ -18,7 +18,7 @@ const exists = async (name) => {
 };
 
 const addParticipant = async (name, user) => {
-  Sorteio.updateOne({ name }, { $push: { participants: user } });
+  return await Sorteio.updateOne({ name }, { $push: { participants: user } });
 };
 
 const checkParticipant = async (name, id) => {
@@ -33,7 +33,7 @@ const checkParticipant = async (name, id) => {
 };
 
 const getParticipants = async (name) => {
-  return await Sorteio.findOne({ name }).participants;
+  return (await Sorteio.findOne({ name })).participants;
 };
 
 const deleteSorteio = async (name) => {
