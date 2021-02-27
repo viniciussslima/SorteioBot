@@ -18,4 +18,4 @@ Bot para fazer sorteios de amigo secreto pelo Telegram
 
 ## Versão online
 
-- t.me/SorteioOvoBot
+- <a href="https://t.me/SorteioOvoBot" target="_blank">t.me/SorteioOvoBot</a>
