@@ -19,8 +19,10 @@ app.post(`/${process.env.BOT_TOKEN}`, commands);
 
 app.listen(process.env.PORT, async () => {
   console.log("Api rodando na porta " + process.env.PORT);
-  await axios.post(
-    `${process.env.TELEGRAM_API}${process.env.BOT_TOKEN}/setWebhook`,
-    `${process.env.API_URL}`
-  );
+  if (!process.env.ENV) {
+    await axios.post(
+      `${process.env.TELEGRAM_API}${process.env.BOT_TOKEN}/setWebhook`,
+      `${process.env.API_URL}`
+    );
+  }
 });
