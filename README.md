@@ -15,3 +15,7 @@ Bot para fazer sorteios de amigo secreto pelo Telegram
 - TELEGRAM_API= url da api do telegram
 - BOT_TOKEN = token do seu bot do telegram
 - MONGO_URL= URL para acesso ao banco mongoDB
+
+## Versão online
+
+- t.me/SorteioOvoBot
